@@ -55,3 +55,4 @@ buck-out/
 android/
 ios/
 __tests__
+.vscode/
