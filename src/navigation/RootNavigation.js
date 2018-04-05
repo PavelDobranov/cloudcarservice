@@ -1,12 +1,12 @@
 import { TabNavigator } from 'react-navigation';
 
-import ServicesScreen from '../screens/Services';
+import CarServicesScreen from '../screens/CarServices';
 import ShoppingCartScreen from '../screens/ShoppingCart';
 import UserProfileScreen from '../screens/UserProfile';
 
 const routes = {
-  Services: {
-    screen: ServicesScreen,
+  CarServices: {
+    screen: CarServicesScreen,
     navigationOptions: {
       title: 'Услуги',
     },
