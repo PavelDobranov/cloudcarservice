@@ -3,6 +3,7 @@ import { View, Text, FlatList, TouchableOpacity, StyleSheet } from 'react-native
 import { Subscribe } from 'unstated';
 
 import CarServicesContainer from '../../containers/CarServicesContainer';
+import CarServiceMainCategory from '../../components/CarServiceMainCategory';
 
 const styles = StyleSheet.create({
   container: {
@@ -10,22 +11,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#F6F8FA',
   },
-  listItem: {
-    margin: 5,
-    padding: 10,
-    backgroundColor: '#FFF',
-    borderWidth: StyleSheet.hairlineWidth,
-    borderColor: 'orange',
-    // borderRadius: 10,
-    elevation: 10,
-  },
 });
-
-const ServiceItem = ({ item, onPress }) => (
-  <TouchableOpacity onPress={onPress} style={styles.listItem}>
-    <Text >{item.name}</Text>
-  </TouchableOpacity>
-);
 
 const CarServicesMain = ({ navigation }) => (
   <Subscribe to={[CarServicesContainer]}>
@@ -34,9 +20,9 @@ const CarServicesMain = ({ navigation }) => (
         <FlatList
           data={CarServices.state.services}
           renderItem={({ item }) => (
-            <ServiceItem
-              item={item}
-              onPress={() => navigation.navigate('CarServiceCategories', { title: item.name })}
+            <CarServiceMainCategory
+              name={item.name}
+              onPress={() => console.warn('pressed')}
             />
           )}
           keyExtractor={({ id }) => String(id)}
