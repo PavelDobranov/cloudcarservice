@@ -5,14 +5,13 @@ const styles = StyleSheet.create({
   container: {
     margin: 5,
     padding: 10,
-    backgroundColor: '#eee',
   },
 });
 
-const CarServiceSubCategory = ({ name, onPress }) => (
+const CarServiceCategory = ({ title, onPress }) => (
   <TouchableOpacity onPress={onPress} style={styles.container}>
-    <Text>{name}</Text>
+    <Text>{title}</Text>
   </TouchableOpacity>
 );
 
-export default CarServiceSubCategory;
+export default CarServiceCategory;
