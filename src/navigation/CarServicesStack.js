@@ -1,17 +1,24 @@
+import React from 'react';
 import { StackNavigator } from 'react-navigation';
 
-import { CarServicesMain, CarServiceCategories } from '../screens/CarServices';
+import CarServices from '../screens/CarServices';
+import withCarServicesState from '../containers/withCarServicesState';
 
 const routes = {
-  CarServicesMain: {
-    screen: CarServicesMain,
+  CarServices: {
+    screen: CarServices,
     navigationOptions: {
       title: 'Услуги',
     },
   },
-  CarServiceCategories: {
-    screen: CarServiceCategories,
-  },
 };
 
-export default StackNavigator(routes);
+const CarServicesStack = ({ carServices }) => {
+  const Navigator = StackNavigator(routes, {
+    initialRouteParams: { carServices: carServices.state.services },
+  });
+
+  return <Navigator />;
+};
+
+export default withCarServicesState(CarServicesStack);
