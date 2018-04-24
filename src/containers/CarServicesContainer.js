@@ -3,7 +3,7 @@
 import { Container } from 'unstated';
 
 const normalizeServicesData = services => {
-  services.map(service => {
+  const normalized = services.map(service => {
     const { id, name, title, children, products, image, price } = service;
 
     const result = {
@@ -29,6 +29,8 @@ const normalizeServicesData = services => {
 
     return result;
   });
+
+  return normalized;
 };
 
 class CarServicesContainer extends Container {
