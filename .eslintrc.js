@@ -1,4 +1,5 @@
 module.exports = {
+  "parser": "babel-eslint",
   "extends": "airbnb",
   "rules": {
     "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }],
