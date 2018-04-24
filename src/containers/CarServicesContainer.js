@@ -1,12 +1,14 @@
+/* global fetch */
+
 import { Container } from 'unstated';
 
-const normalizeServicesData = (services) => {
-  return services.map(service => {
-    const { id, name, title, children, products, price } = service;
+const normalizeServicesData = services => {
+  services.map(service => {
+    const { id, name, title, children, products, image, price } = service;
 
     const result = {
       id,
-      title: title || name
+      title: title || name,
     };
 
     if (children && children.length) {
@@ -21,11 +23,15 @@ const normalizeServicesData = (services) => {
       result.price = price;
     }
 
+    if (image) {
+      result.image = image;
+    }
+
     return result;
   });
 };
 
-export default class CarServicesContainer extends Container {
+class CarServicesContainer extends Container {
   constructor() {
     super();
     this.fetchServices();
@@ -45,3 +51,5 @@ export default class CarServicesContainer extends Container {
       });
   };
 }
+
+export default CarServicesContainer;
