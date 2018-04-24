@@ -17,15 +17,15 @@ class CarServices extends Component {
     this.props.navigation.navigate('CarServices', { carServices: item.children });
   }
 
+  keyExtractor = ({ id }) => String(id);
+
   renderItem = ({ item }) => {
     if (item.children) {
-      return <CarServiceCategory title={item.title} onPress={() => this.handleCategoryPress(item)} />;
+      return <CarServiceCategory category={item} onPress={() => this.handleCategoryPress(item)} />;
     }
 
-    return <CarService title={item.title} price={item.price} />;
+    return <CarService service={item} />;
   };
-
-  keyExtractor = ({ id }) => String(id);
 
   render() {
     const { carServices } = this.props.navigation.state.params;
@@ -37,8 +37,8 @@ class CarServices extends Component {
             <ActivityIndicator size="large" /> :
             <FlatList
               data={carServices}
-              renderItem={this.renderItem}
               keyExtractor={this.keyExtractor}
+              renderItem={this.renderItem}
             />
         }
       </View>
