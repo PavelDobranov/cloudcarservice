@@ -1,20 +1,38 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+
+import withShoppingCartState from '../containers/withShoppingCartState';
 
 const styles = StyleSheet.create({
   container: {
-    margin: 5,
+    margin: 10,
+    padding: 20,
+    borderRadius: 2,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: '#dddfe2',
+    backgroundColor: '#fff',
+  },
+  button: {
+    margin: 10,
     padding: 10,
-    backgroundColor: '#eee',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 2,
+    backgroundColor: 'orange',
   },
 });
 
-const CarService = ({ title, price }) => (
+const CarService = ({ service, shoppingCart }) => (
   <View style={styles.container}>
-    <Text>{title}</Text>
-    <Text>{price}</Text>
-    <Button title="Добави" onPress={() => console.warn(price)} />
+    <Text>{service.title}</Text>
+    <Text>{service.price.toFixed(2)} лв.</Text>
+    <TouchableOpacity
+      style={styles.button}
+      onPress={() => shoppingCart.addProduct(service.id)}
+    >
+      <Text>Добави</Text>
+    </TouchableOpacity>
   </View>
 );
 
-export default CarService;
+export default withShoppingCartState(CarService);
