@@ -2,7 +2,7 @@ import { TabNavigator } from 'react-navigation';
 
 import CarServicesStack from './CarServicesStack';
 import ShoppingCartStack from './ShoppingCartStack';
-import UserProfileScreen from '../screens/UserProfile';
+import UserProfileStack from './UserProfileStack';
 
 const routes = {
   CarServices: {
@@ -18,7 +18,7 @@ const routes = {
     },
   },
   UserProfile: {
-    screen: UserProfileScreen,
+    screen: UserProfileStack,
     navigationOptions: {
       title: 'Профил',
     },
