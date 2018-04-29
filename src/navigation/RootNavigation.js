@@ -1,7 +1,7 @@
 import { TabNavigator } from 'react-navigation';
 
 import CarServicesStack from './CarServicesStack';
-import ShoppingCartScreen from '../screens/ShoppingCart';
+import ShoppingCartStack from './ShoppingCartStack';
 import UserProfileScreen from '../screens/UserProfile';
 
 const routes = {
@@ -12,7 +12,7 @@ const routes = {
     },
   },
   ShoppingCart: {
-    screen: ShoppingCartScreen,
+    screen: ShoppingCartStack,
     navigationOptions: {
       title: 'Кошница',
     },
