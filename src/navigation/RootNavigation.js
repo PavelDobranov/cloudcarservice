@@ -5,6 +5,7 @@ import IonIcon from 'react-native-vector-icons/Ionicons';
 import CarServicesStack from './CarServicesStack';
 import ShoppingCartStack from './ShoppingCartStack';
 import UserProfileStack from './UserProfileStack';
+import ShoppingCartIcon from '../components/ShoppingCartIcon';
 
 const routes = {
   CarServices: {
@@ -18,7 +19,7 @@ const routes = {
     screen: ShoppingCartStack,
     navigationOptions: {
       title: 'Кошница',
-      tabBarIcon: ({ tintColor }) => <IonIcon name="ios-basket" size={30} color={tintColor} />,
+      tabBarIcon: ({ tintColor }) => <ShoppingCartIcon color={tintColor} />,
     },
   },
   UserProfile: {
