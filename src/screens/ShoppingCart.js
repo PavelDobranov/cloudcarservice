@@ -1,5 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, Button, StyleSheet } from 'react-native';
+
+import IonIcon from 'react-native-vector-icons/Ionicons';
 
 const styles = StyleSheet.create({
   container: {
@@ -10,9 +12,18 @@ const styles = StyleSheet.create({
   },
 });
 
-const ShoppingCart = () => (
+const ShoppingCart = ({ navigation }) => (
   <View style={styles.container}>
-    <Text>Shopping cart screen</Text>
+    <IonIcon name="ios-basket" size={80} color="lightgray" />
+    <Text>Кошницата е празна</Text>
+    <View style={{ marginTop: 10 }}>
+      <Button
+        title="Добави услуга"
+        color="#ff6633"
+        onPress={() => navigation.navigate('CarServicesTab')}
+      />
+    </View>
+
   </View>
 );
 
