@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
   },
   badgeText: {
     fontSize: 10,
+    color: '#fff',
   },
 });
 
@@ -34,7 +35,7 @@ const ShoppingCartIcon = ({ color, shoppingCart }) => {
     <View style={styles.container}>
       <IonIcon name="ios-basket" size={30} color={color} />
       <View style={styles.badge}>
-        <Text style={[styles.badgeText, { color }]}>{productsCount}</Text>
+        <Text style={styles.badgeText}>{productsCount}</Text>
       </View>
     </View>
   );
