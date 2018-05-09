@@ -8,21 +8,21 @@ import UserProfileStack from './UserProfileStack';
 import ShoppingCartIcon from '../components/ShoppingCartIcon';
 
 const routes = {
-  CarServices: {
+  CarServicesTab: {
     screen: CarServicesStack,
     navigationOptions: {
       title: 'Услуги',
       tabBarIcon: ({ tintColor }) => <IonIcon name="ios-car" size={30} color={tintColor} />,
     },
   },
-  ShoppingCart: {
+  ShoppingCartTab: {
     screen: ShoppingCartStack,
     navigationOptions: {
       title: 'Кошница',
       tabBarIcon: ({ tintColor }) => <ShoppingCartIcon color={tintColor} />,
     },
   },
-  UserProfile: {
+  UserProfileTab: {
     screen: UserProfileStack,
     navigationOptions: {
       title: 'Профил',
@@ -35,9 +35,11 @@ const config = {
   tabBarPosition: 'bottom',
   swipeEnabled: false,
   tabBarOptions: {
-    pressColor: 'darkgrey',
+    pressColor: '#ff6633',
+    activeTintColor: '#ff6633',
+    inactiveTintColor: 'gray',
     style: {
-      backgroundColor: '#ff6633',
+      backgroundColor: '#fff',
     },
     tabStyle: {
       padding: 0,
@@ -48,7 +50,7 @@ const config = {
       fontSize: 10,
     },
     indicatorStyle: {
-      backgroundColor: '#fff',
+      backgroundColor: '#ff6633',
     },
     iconStyle: {
       width: 40,
