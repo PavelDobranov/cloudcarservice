@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, Image, StyleSheet } from 'react-native';
 
+import IonIcon from 'react-native-vector-icons/Ionicons';
+
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
@@ -25,14 +27,13 @@ const CarServiceCategory = ({ category, onPress }) => (
     </View>
     {
       category.image ?
-        (<Image
+        <Image
           style={{ width: 80, height: 80 }}
           source={{ uri: `https://cloudcarservice.com/img/service_icons/${category.image}` }}
-        />) :
-        (<Image
-          style={{ width: 20, height: 20, margin: 20 }}
-          source={{ uri: 'http://vnsoftindia.com/anagram/img/arrow-25-xxl.png' }}
-        />)
+        /> :
+        <View style={{ margin: 12 }}>
+          <IonIcon name="ios-arrow-forward" size={30} color="darkgrey" />
+        </View>
     }
   </TouchableOpacity>
 );
