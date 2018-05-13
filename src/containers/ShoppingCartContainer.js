@@ -5,22 +5,22 @@ class ShoppingCartContainer extends Container {
     products: [],
   };
 
-  addProduct = (id) => {
+  addProduct = (newProduct) => {
     const { products } = this.state;
-    const product = products.find(prod => prod.id === id);
+    const product = products.find(prod => prod.id === newProduct.id);
 
     if (product) {
       product.qty += 1;
     } else {
-      products.push({ id, qty: 1 });
+      products.push({ ...newProduct, qty: 1 });
     }
 
     this.setState({ products });
   };
 
-  removeProduct = (id) => {
+  removeProduct = (productToRemove) => {
     const { products } = this.state;
-    const productIndex = products.findIndex(prod => prod.id === id);
+    const productIndex = products.findIndex(prod => prod.id === productToRemove.id);
     const product = products[productIndex];
 
     if (product.qty > 1) {
