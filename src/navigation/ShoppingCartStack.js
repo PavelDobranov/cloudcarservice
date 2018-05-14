@@ -1,16 +1,23 @@
 import { StackNavigator } from 'react-navigation';
 
 import ShoppingCart from '../screens/ShoppingCart';
+import Order from '../screens/Order';
 
 const routes = {
-  SHoppingCart: {
+  ShoppingCart: {
     screen: ShoppingCart,
     navigationOptions: {
       title: 'Кошница',
     },
   },
+  Order: {
+    screen: Order,
+    navigationOptions: {
+      title: 'Поръчка',
+    },
+  },
 };
 
-const SHoppingCartStack = StackNavigator(routes);
+const ShoppingCartStack = StackNavigator(routes);
 
-export default SHoppingCartStack;
+export default ShoppingCartStack;

@@ -67,7 +67,7 @@ class ShoppingCart extends Component {
             <Button
               title="Завърши поръчката"
               color="#ff6633"
-              onPress={() => { }}
+              onPress={() => this.props.navigation.navigate('Order')}
             />
           </View>
         </View>
